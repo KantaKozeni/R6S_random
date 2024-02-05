@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Selection</title>
+</head>
+<body>
+
+<button onclick="selectOperator('攻撃')">攻撃</button>
+<button onclick="selectOperator('防御')">防御</button>
+
+<script>
+    const op_A = ['RAM', 'BRAVA', 'GRIM', 'SENS', 'OSA', 'FLORES', 'ZERO', 'ACE', 'IANA', 'KALI', 'AMARU', 'NoKK', 'GRIDLOCK', 'NOMAD', 'MAVERICK', 'LION', 'FINKA', 'DOKKAEBI', 'ZOFIA', 'YING', 'JAckaL', 'HIBANA', 'CAPITAO', 'BUCK', 'SLEDGE', 'THATCHER', 'ASH', 'THERMITE', 'MONTAGE', 'TWITCH', 'BLITH', 'IQ', 'FAZE', 'GLAZ'];
+    const op_B = ['TUBARAO', 'FENRIR', 'SOLIS', 'AZAMI', 'TORN', 'THUNDERBIRD', 'ARUNI', 'MELUSI', 'ORYX', 'WAMAI', 'GOYO', 'WARDEN', 'MOZZIE', 'KAID', 'CLASH', 'MAESTRO', 'ALIBI', 'VIGIL', 'ELA', 'LESION', 'MIRA', 'ECHO', 'caveira', 'VALKYRIE', 'FROST', 'MUTE', 'SMOKE', 'CASTLE', 'PULSE', 'DOC', 'ROOK', 'JAGER', 'BANDIT', 'TACHINCO', 'KAPKAN'];
+
+    function selectOperator(type) {
+        const selectedOperators = [];
+        const targetArray = (type === '攻撃') ? op_A : op_B;
+
+        for (let i = 0; i < 3; i++) {
+            const randomIndex = Math.floor(Math.random() * targetArray.length);
+            const selectedOperator = targetArray.splice(randomIndex, 1)[0];
+            selectedOperators.push(selectedOperator);
+        }
+
+        alert(selectedOperators.join('\n'));
+    }
+</script>
+
+</body>
+</html>
